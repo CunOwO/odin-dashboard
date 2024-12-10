@@ -24,12 +24,94 @@ img {
   max-inline-size: 100%;
 }
 
-/* html {
+html {
     font-size: clamp(1rem, 0.75rem + 1.5vw, 2rem);
 }
  
 
-body {
+/* body {
     font-size: calc(16px + 1vw);
     height: 100vh;
 } */
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.header {
+  grid-column: 2 / -1;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 0 50px 20px 40px;
+
+  & .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    
+    & svg {
+        height: 30px;
+        width: 30px;
+    }
+
+    & input {
+      appearance: none;
+      font-size: 0.6rem;
+    }
+  } 
+
+  & .user-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    & svg {
+      height: 30px;
+      width: 30px;
+    }
+    
+    & img {
+      border-radius: 50%;
+    }
+
+    & span {
+      font-size: 0.6rem;
+    }
+  } 
+
+  & .greeting {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+
+    & img {
+      border-radius: 50%;
+    }
+
+    & p {
+      font-size: 0.5rem;
+    }
+
+    & p span {
+      font-size: 0.9rem;
+    }
+  }
+
+  & .btn-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 0.6rem;
+    align-items: center;
+    gap: 15px;
+
+  }
+}
+
+
+.sidebar {
+  grid-row: 1 / span 2;
+}
