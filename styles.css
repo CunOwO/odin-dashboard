@@ -36,7 +36,8 @@ html {
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 4fr;
+  background-color: rgb(226 232 240);
 }
 
 .header {
@@ -48,6 +49,7 @@ html {
   font-weight: bold;
   column-gap: 1.3rem;
   box-shadow: 2px 4px 6px 0px rgb(0 0 0 / 20%);
+  background-color: white;
 
   & .search-bar {
     display: flex;
@@ -69,6 +71,11 @@ html {
       border-radius: 20px;
       padding: 8px 15px;
     }
+
+    & input:hover {
+      background-color: rgb(206, 211, 219);
+      transform: scale(1.01);
+    }
   } 
 
   & .user-bar {
@@ -80,6 +87,7 @@ html {
     & svg {
       height: 1rem;
       width: auto;
+      cursor: pointer;
     }
     
     & img {
@@ -130,6 +138,16 @@ html {
       background-color: rgb(25 146 212);
       font-weight: inherit;
     }
+
+    & button:hover {
+      background-color: rgb(25 146 212 / 80%);
+      cursor: pointer;
+    }
+
+    & button:active {
+      background-color: rgb(21, 119, 172);
+      transform: scale(0.99);
+    }
   }
 }
 
@@ -144,7 +162,6 @@ html {
   gap: 1.7rem;
   padding-top: 20px;
   padding-left: 20px;
-  z-index: 1;
  
 
   & .logo { 
@@ -191,8 +208,6 @@ html {
 }
 
 .main-content {
-  z-index: -1;
-  background-color: rgb(226 232 240);
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 0.7rem;
@@ -231,15 +246,26 @@ html {
     }
   }
 
+  & .card:hover {
+    transform: scale(1.02);
+    transition: 200ms transform ease-in-out;
+    box-shadow: 4px 8px 12px 0px rgb(0 0 0 / 20%);
+  }
+
   & svg {
     height: 0.8rem;
     width: auto;
+  }
+
+  & svg:hover {
+    cursor: pointer;
   }
 }
 
 h2 {
   font-size: 0.7rem;
   font-weight: bold;
+  margin-bottom: 0.3rem;
 }
 
 .card {
@@ -270,11 +296,11 @@ h2 {
 
   & p:first-child {
     font-weight: bold;
-    font-size: 0.4rem;
+    font-size: 0.5rem;
   }
 
   & p + p {
-    font-size: 0.3rem;
+    font-size: 0.4rem;
     color: rgb(135 135 135);
   }
 }
